@@ -11,7 +11,7 @@
 - Starts May 30, 2024 20:00 UTC
 - Ends June 20, 2024 20:00 UTC
 
-  ❗️Awarding Note for Wardens, Judges, and Validators: If you want to claim your awards in $ worth of CANTO, you must follow the steps outlined in this thread; otherwise you'll be paid out in USDC.
+❗️Awarding Note for Wardens, Judges, and Lookouts: If you want to claim your awards in $ worth of CANTO, you must follow the steps outlined in the audit channel before the audit ends; otherwise you'll be paid out in USDC.
 
 ## Automated Findings / Publicly Known Issues
 
