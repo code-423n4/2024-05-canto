@@ -165,6 +165,8 @@ The current parameters and state of Canto v7 can be reviewed on [Polkachu](https
 | x/onboarding/keeper/ibc_callbacks.go | 170 |
 | x/onboarding/module.go | 152 |
 | go.mod | 260 |
+| Total  |   5388 |
+
 
 ### app
 
@@ -220,6 +222,7 @@ The current parameters and state of Canto v7 can be reviewed on [Polkachu](https
 | x/evm/autocli.go | 74 |
 | x/evm/module.go | 193 |
 | go.mod | 256 |
+| Total  | 5957   |
 
 ### app
 
