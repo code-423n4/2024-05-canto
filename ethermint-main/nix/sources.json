@@ -1,0 +1,62 @@
+{
+    "cosmos-sdk": {
+        "branch": "v0.50.1",
+        "description": ":chains: A Framework for Building High Value Public Blockchains :sparkles:",
+        "homepage": "https://cosmos.network/",
+        "owner": "cosmos",
+        "repo": "cosmos-sdk",
+        "rev": "9814f684b9dd7e384064ca86876688c05e685e54",
+        "sha256": "0l0jnyjxq6gdy49gypspzz64s6gk91a25zs1vj761czbz3w78kdh",
+        "type": "tarball",
+        "url": "https://github.com/cosmos/cosmos-sdk/archive/9814f684b9dd7e384064ca86876688c05e685e54.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "gomod2nix": {
+        "branch": "master",
+        "description": "Convert applications using Go modules to Nix expressions",
+        "homepage": null,
+        "owner": "tweag",
+        "repo": "gomod2nix",
+        "rev": "001bbfa22e2adeb87c34c6015e5694e88721cabe",
+        "sha256": "1nnfw9366az79skmfqfmxv3789wqgf2xmi9k734qjplnhb28r458",
+        "type": "tarball",
+        "url": "https://github.com/tweag/gomod2nix/archive/001bbfa22e2adeb87c34c6015e5694e88721cabe.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "niv": {
+        "branch": "master",
+        "description": "Easy dependency management for Nix projects",
+        "homepage": "https://github.com/nmattia/niv",
+        "owner": "nmattia",
+        "repo": "niv",
+        "rev": "6bd7cd686220bf3db0e212481faf9578e8c8ff0f",
+        "sha256": "15claxlj6y15db67qc7kb4vzyn6sv7r13z4q502vq7a4z2488z94",
+        "type": "tarball",
+        "url": "https://github.com/nmattia/niv/archive/6bd7cd686220bf3db0e212481faf9578e8c8ff0f.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixpkgs": {
+        "branch": "master",
+        "description": "Nix Packages collection",
+        "homepage": "",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f63903a90faf6cce169eb2bcc93fb45c457b1d31",
+        "sha256": "14is4h0wxq8is80vcjiakl4zn5zkb8w9wd7my30r1qf660smfii7",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/f63903a90faf6cce169eb2bcc93fb45c457b1d31.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "poetry2nix": {
+        "branch": "master",
+        "description": "Convert poetry projects to nix automagically [maintainer=@adisbladis] ",
+        "homepage": "",
+        "owner": "nix-community",
+        "repo": "poetry2nix",
+        "rev": "dded87ea03726eab238267b92fe5723f808722cc",
+        "sha256": "1hbrmzmd5my2ygkpppji9gl8dl7hag9zldgp9xvhrf2qzy6y76i5",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/poetry2nix/archive/dded87ea03726eab238267b92fe5723f808722cc.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}
