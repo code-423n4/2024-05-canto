@@ -11,6 +11,8 @@
 - Starts May 30, 2024 20:00 UTC
 - Ends June 20, 2024 20:00 UTC
 
+  ❗️Awarding Note for Wardens, Judges, and Validators: If you want to claim your awards in $ worth of CANTO, you must follow the steps outlined in this thread; otherwise you'll be paid out in USDC.
+
 ## Automated Findings / Publicly Known Issues
 
 The 4naly3er report can be found [here](https://github.com/code-423n4/2024-05-canto/blob/main/4naly3er-report.md).
