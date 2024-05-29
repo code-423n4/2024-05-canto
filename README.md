@@ -422,28 +422,6 @@ make test-sim-multi-seed-short
 make test-sim-benchmark-invariants
 ```
 
-
-
-✅ SCOUTS: Please format the response above 👆 using the template below👇
-
-```bash
-git clone https://github.com/code-423n4/2023-08-arbitrum
-git submodule update --init --recursive
-cd governance
-foundryup
-make install
-make build
-make sc-election-test
-```
-To run code coverage
-```bash
-make coverage
-```
-To run gas benchmarks
-```bash
-make gas
-```
-
 ✅ SCOUTS: Add a screenshot of your terminal showing the gas report
 ✅ SCOUTS: Add a screenshot of your terminal showing the test coverage
 
