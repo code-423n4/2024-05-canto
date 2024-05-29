@@ -259,19 +259,27 @@ N/A
 
 To run local testnet
 
+First:
+* Install go (version must be >= 1.21 to avoid [this bug](https://github.com/jeremylong/DependencyCheck/issues/6258))
+* Install [jq](https://jqlang.github.io/jq/download/)
+
 ```bash
 git clone https://github.com/code-423n4/2024-05-canto
+cd 2024-05-canto
+cd ethermint-main
 make install
 ./init.sh
 ```
 
 To run unit tests
 ```bash
+cd canto-main
 make test
 ```
 
 To run simulation (fuzz test)
 ```bash
+cd canto-main
 make test-sim-nondeterminism
 make test-sim-custom-genesis-fast
 make test-sim-import-export
