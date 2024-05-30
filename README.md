@@ -42,9 +42,9 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 * https://code4rena.com/reports/2024-03-neobase
 * https://code4rena.com/reports/2024-03-canto
 - **Documentation:** https://docs.canto.io/
-- **Website:** 🐺 CA: add a link to the sponsor's website
-- **X/Twitter:** 🐺 CA: add a link to the sponsor's Twitter
-- **Discord:** 🐺 CA: add a link to the sponsor's Discord
+- **Website:** https://canto.io/
+- **X/Twitter:** https://twitter.com/CantoPublic
+- **Discord:** https://discord.com/invite/63GmEXZsVf
 
 ---
 
@@ -56,14 +56,14 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 
 
-| Question                                | Answer                       |
-| --------------------------------------- | ---------------------------- |
-| ERC20 used by the protocol              |       None             |
-| Test coverage                           | ✅ SCOUTS: Please populate this after running the test coverage command                          |
-| ERC721 used  by the protocol            |           None          |
-| ERC777 used by the protocol             |           None             |
-| ERC1155 used by the protocol            |           None            |
-| Chains the protocol will be deployed on | OtherCanto, mainnet  |
+| Question                                | Answer                                                                                                                                                                           |
+| --------------------------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ERC20 used by the protocol              | None                                                                                                                                                                             |
+| Test coverage                           | Canto<br/>./app: 64.7% files, 36.9% statements<br/>./x: 75.6% files, 15% statements<br/> Ethermint<br/>./app: 100% files, 71.5% statements<br/>./x: 83.8% files, 19.9 statements |
+| ERC721 used  by the protocol            | None                                                                                                                                                                             |
+| ERC777 used by the protocol             | None                                                                                                                                                                             |
+| ERC1155 used by the protocol            | None                                                                                                                                                                             |
+| Chains the protocol will be deployed on | OtherCanto, mainnet                                                                                                                                                              |
 
 
 ### External integrations (e.g., Uniswap) behavior in scope:
@@ -137,35 +137,35 @@ The current parameters and state of Canto v7 can be reviewed on [Polkachu](https
 
 ## Scope
 
-| File | SLOC |
-| --- | --- |
-| app/app.go | 1480 |
-| app/ante/ante.go | 64 |
-| app/ante/handler_options.go | 149 |
-| app/upgrades/v8/upgrades.go | 69 |
-| x/csr/keeper/keeper.go | 65 |
-| x/csr/keeper/msg_server.go | 38 |
-| x/csr/module.go | 170 |
-| x/erc20/keeper/keeper.go | 65 |
-| x/erc20/keeper/msg_server.go | 627 |
-| x/erc20/module.go | 159 |
-| x/govshuttle/keeper/keeper.go | 84 |
-| x/govshuttle/keeper/msg_server.go | 54 |
-| x/govshuttle/module.go | 152 |
-| x/epochs/keeper/keeper.go | 43 |
-| x/epochs/keeper/abci.go | 66 |
-| x/epochs/module.go | 183 |
-| x/inflation/keeper/keeper.go | 77 |
-| x/inflation/keeper/hooks.go | 141 |
-| x/inflation/module.go | 187 |
-| x/coinswap/keeper/keeper.go | 375 |
-| x/coinswap/keeper/msg_server.go | 175 |
-| x/coinswap/module.go | 167 |
-| x/onboarding/ibc_middleware.go | 76 |
-| x/onboarding/keeper/keeper.go | 102 |
-| x/onboarding/keeper/msg_server.go | 38 |
-| x/onboarding/keeper/ibc_callbacks.go | 170 |
-| x/onboarding/module.go | 152 |
+| File | SLOC | Test Coverage |
+| --- | --- |--------------|
+| app/app.go | 1480 | 69.2%        |
+| app/ante/ante.go | 64 | 0%           |
+| app/ante/handler_options.go | 149 | 0%           |
+| app/upgrades/v8/upgrades.go | 69 | 82.4%        |
+| x/csr/keeper/keeper.go | 65 | 100%         |
+| x/csr/keeper/msg_server.go | 38 | 75%          |
+| x/csr/module.go | 170 | 60%          |
+| x/erc20/keeper/keeper.go | 65 | 100%         |
+| x/erc20/keeper/msg_server.go | 627 | 95.3%        |
+| x/erc20/module.go | 159 | 47.1%        |
+| x/govshuttle/keeper/keeper.go | 84 | 0%           |
+| x/govshuttle/keeper/msg_server.go | 54 | 0%           |
+| x/govshuttle/module.go | 152 | 0%           |
+| x/epochs/keeper/keeper.go | 43 | 83.3%        |
+| x/epochs/keeper/abci.go | 66 | 100%         |
+| x/epochs/module.go | 183 | 44.1%        |
+| x/inflation/keeper/keeper.go | 77 | 66.7%        |
+| x/inflation/keeper/hooks.go | 141 | 90.2%        |
+| x/inflation/module.go | 187 | 45.7%        |
+| x/coinswap/keeper/keeper.go | 375 | 81.2%        |
+| x/coinswap/keeper/msg_server.go | 175 | 9.4%         |
+| x/coinswap/module.go | 167 | 45.2%        |
+| x/onboarding/ibc_middleware.go | 76 | 62.5% |        
+| x/onboarding/keeper/keeper.go | 102 | 66.7% |     
+| x/onboarding/keeper/msg_server.go | 38 | 75% |    
+| x/onboarding/keeper/ibc_callbacks.go | 170 | 93.8% |
+| x/onboarding/module.go | 152 | 43.8% |
 | go.mod | 260 |
 | Total  |   5388 |
 
@@ -201,30 +201,30 @@ The current parameters and state of Canto v7 can be reviewed on [Polkachu](https
 
 ## Scope
 
-| File | SLOC |
-| --- | --- |
-| app/app.go | 1094 |
-| app/ante/ante.go | 177 |
-| app/ante/handler_options.go | 109 |
-| app/upgrades.go | 143 |
-| server/start.go | 768 |
-| server/util.go | 169 |
-| rpc/backend/sign_tx.go | 168 |
-| rpc/backend/node_info.go | 359 |
-| rpc/namespaces/ethereum/eth/filters/api.go | 653 |
-| rpc/namespaces/ethereum/eth/filters/filter_system.go | 340 |
-| x/feemarket/types/msg.go | 5 |
-| x/feemarket/keeper/keeper.go | 137 |
+| File | SLOC | Test Coverage |
+| --- | --- | --------------|
+| app/app.go | 1094 | 74.7% |
+| app/ante/ante.go | 177 | 74.5% |
+| app/ante/handler_options.go | 109 | 61.5% |
+| app/upgrades.go | 143 | 56.1% |
+| server/start.go | 768 | 0% |
+| server/util.go | 169 | 0% |
+| rpc/backend/sign_tx.go | 168 | 70.4% |
+| rpc/backend/node_info.go | 359 | 50.7% |
+| rpc/namespaces/ethereum/eth/filters/api.go | 653 | 0% |
+| rpc/namespaces/ethereum/eth/filters/filter_system.go | 340 | 0% |
+| x/feemarket/types/msg.go | 5 | 0% |
+| x/feemarket/keeper/keeper.go | 137 | 87.1% |
 | x/feemarket/keeper/msg_server.go | 35 |
-| x/feemarket/autocli.go | 48 |
-| x/feemarket/module.go | 174 |
-| x/evm/types/msg.go | 487 |
-| x/evm/keeper/keeper.go | 398 |
-| x/evm/keeper/msg_server.go | 170 |
-| x/evm/autocli.go | 74 |
-| x/evm/module.go | 193 |
-| go.mod | 256 |
-| Total  | 5957   |
+| x/feemarket/autocli.go | 48 | 100% |
+| x/feemarket/module.go | 174 | 56.2% |
+| x/evm/types/msg.go | 487 | 65.1 % |
+| x/evm/keeper/keeper.go | 398 | 91.2% |
+| x/evm/keeper/msg_server.go | 170 | 88.9% |
+| x/evm/autocli.go | 74 | 100% |
+| x/evm/module.go | 193 | 48.6% |
+| go.mod | 256 ||
+| Total  | 5957   ||
 
 ### app
 
@@ -270,7 +270,12 @@ First:
 
 ```bash
 git clone https://github.com/code-423n4/2024-05-canto
+# for Canto-main
 cd 2024-05-canto
+make install
+./init.sh
+
+# for Ethermint-main
 cd ethermint-main
 make install
 ./init.sh
@@ -294,6 +299,13 @@ make test-sim-multi-seed-short
 make test-sim-benchmark-invariants
 ```
 
+Test coverage
+```bash
+cd canto-main
+go test ./... -coverprofile=coverage.out
+go tool cover -html=coverage.out -o coverage.html
+open coverage.html
+```
 
 ## Miscellaneous
 Employees of Canto and employees' family members are ineligible to participate in this audit.
