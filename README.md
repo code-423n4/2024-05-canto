@@ -35,7 +35,9 @@ Canto's technical foundation consists of the following key components:
 - [**CometBFT**](https://docs.cometbft.com/v0.38/) (Tendermint): This is a Byzantine Fault Tolerant (BFT) consensus engine known for its high security and throughput. CometBFT provides fast transaction finality and supports extensive interoperability among different blockchains.
 
 ### Purpose of the Code Audit
-The audit will focus on the upgrade of the Canto and Ethermint blockchain applications from Cosmos SDK v0.45.x to v0.50.x, as well as the associated updates in ibc-go v8 and CometBFT v0.38.x. The primary goal is to identify any issues where previously functioning features may no longer work, malfunction, or introduce new vulnerabilities due to SDK bumps, interface changes, incorrect migration settings, or dependencies on the new versions of Cosmos SDK, ibc-go, and CometBFT. The Ethermint module within Canto, which provides EVM compatibility, has also been updated to reflect changes in the dependencies.
+The audit will focus on the upgrade of the Canto and Ethermint blockchain applications from Cosmos SDK v0.45.x to v0.50.x, as well as the associated updates in ibc-go v8 and CometBFT v0.38.x.
+The primary goal is to identify any issues where previously functioning features may no longer work, malfunction, or introduce new vulnerabilities due to SDK bumps, interface changes, incorrect migration settings, or dependencies on the new versions of Cosmos SDK, ibc-go, and CometBFT. 
+The Ethermint module within Canto, which provides EVM compatibility, has also been updated to reflect changes in the dependencies.
 
 #### Key dependency changes:
 
@@ -54,38 +56,6 @@ The code audit for Canto includes the review of key components that have undergo
 ```
 - **canto_main**: This directory contains the Canto Appchain, which is built on Cosmos SDK. The Canto Appchain forms the core blockchain infrastructure supporting various financial applications. It utilizes a modular architecture and supports IBC to enhance scalability and interoperability.
 - **ethermint_main**: This directory contains the Ethermint blockchain, which provides Ethereum compatibility. Ethermint enables the use of Ethereum's smart contracts and tools on the Canto blockchain and has been updated to reflect changes in its dependencies to remain compatible with the latest versions of the underlying technologies.
-
-
-### notable changed files
-```
-app/app.go
-app/ante/ante.go
-app/ante/handler_options.go
-app/upgrades/v8/upgrades.go
-x/csr/keeper/keeper.go
-x/csr/keeper/msg_server.go
-x/csr/module.go
-x/erc20/keeper/keeper.go
-x/erc20/keeper/msg_server.go
-x/erc20/module.go
-x/govshuttle/keeper/keeper.go
-x/govshuttle/keeper/msg_server.go
-x/govshuttle/module.go
-x/epochs/keeper/keeper.go
-x/epochs/keeper/abci.go
-x/epochs/module.go
-x/inflation/keeper/keeper.go
-x/inflation/keeper/hooks.go
-x/inflation/module.go
-x/coinswap/keeper/keeper.go
-x/coinswap/keeper/msg_server.go
-x/coinswap/module.go
-x/onboarding/ibc_middleware.go
-x/onboarding/keeper/keeper.go
-x/onboarding/keeper/msg_server.go
-x/onboarding/keeper/ibc_callbacks.go
-x/onboarding/module.go
-```
 
 ### app
 - app.go
@@ -111,32 +81,6 @@ x/onboarding/module.go
 - as the versions of different modules in `go.mod` are upgraded, need to ensure that there are no security issues.
 
 ## ethermint
-
-### notable changed files
-```
-app/app.go
-app/ante/ante.go
-app/ante/handler_options.go
-app/upgrades.go
-encoding/config.go
-server/start.go
-server/util.go
-rpc/backend/sign_tx.go
-rpc/backend/node_info.go
-rpc/namespaces/ethereum/eth/filters/api.go
-rpc/namespaces/ethereum/eth/filters/filter_system.go
-x/feemarket/types/msg.go
-x/feemarket/keeper/keeper.go
-x/feemarket/keeper/msg_server.go
-x/feemarket/autocli.go
-x/feemarket/module.go
-x/evm/types/msg.go
-x/evm/keeper/keeper.go
-x/evm/keeper/msg_server.go
-x/evm/autocli.go
-x/evm/module.go
-go.mod
-```
 
 ### app
 - app.go
