@@ -23,7 +23,122 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 # Overview
 
-[ ⭐️ SPONSORS: add info here ]
+## Key dependency changes:
+- Cosmos-SDK v0.45.9 to v0.50.6
+- CometBFT (Tendermint) v0.34.25 to v0.38.6
+- ibc-go v3.2.0 to v8.2.1
+- go-ethereum v1.10.19 to v1.10.26
+
+## Canto
+
+### notable changed files
+```
+app/app.go
+app/ante/ante.go
+app/ante/handler_options.go
+app/upgrades/v8/upgrades.go
+x/csr/keeper/keeper.go
+x/csr/keeper/msg_server.go
+x/csr/module.go
+x/erc20/keeper/keeper.go
+x/erc20/keeper/msg_server.go
+x/erc20/module.go
+x/govshuttle/keeper/keeper.go
+x/govshuttle/keeper/msg_server.go
+x/govshuttle/module.go
+x/epochs/keeper/keeper.go
+x/epochs/keeper/abci.go
+x/epochs/module.go
+x/inflation/keeper/keeper.go
+x/inflation/keeper/hooks.go
+x/inflation/module.go
+x/coinswap/keeper/keeper.go
+x/coinswap/keeper/msg_server.go
+x/coinswap/module.go
+x/onboarding/ibc_middleware.go
+x/onboarding/keeper/keeper.go
+x/onboarding/keeper/msg_server.go
+x/onboarding/keeper/ibc_callbacks.go
+x/onboarding/module.go
+```
+
+### app
+- app.go
+	- align the overall code with the structure of the cosmos-sdk's [app.go](https://github.com/cosmos/cosmos-sdk/blob/v0.50.6/simapp/app.go), except for some parts related canto's modules and issue(ref. https://github.com/Canto-Network/Canto/issues/122)
+- ante
+	-  name change and few other structural changes related to authz and issue(ref. https://github.com/Canto-Network/Canto/issues/124)
+- upgrades.go
+	- add migration code due to upgrade of cosmos-sdk and ibc-go 
+
+### modules
+- cli
+	- remove legacy REST(ref. https://github.com/cosmos/cosmos-sdk/pull/9594)
+- msgs
+	- move `ValidateBasic` logic to msg_server
+	- remove funcs like Route, Type, GetSignBytes, GetSigners because they are supported by `protobuf`. But in case of `MsgConvertERC20`, GetSigners func is alive and implemented GetSignersFromMsgConvertERC20V2 func additionally.(ref. https://github.com/b-harvest/Canto/pull/53#discussion_r1574149712)
+	- the module-specific proposal handler and param change was switched to `msg level` so `authority` has been added to the required module.(ref. https://github.com/cosmos/cosmos-sdk/issues/10952)
+- keeper
+	- KVStore has been changed to use `KVStoreService` as opposed to the prev way of accessing KVStore via store key.(ref. https://github.com/cosmos/cosmos-sdk/pull/16324, ...)
+
+### NOTE
+- `v8 package bump` will be done in a separate pr after this pr is merged to avoid amplification of file changes in that pr
+- `x/onboarding` module is a feature-driven of the `ibc`. So, need to ensure that features don't behave differently compared to canto v7, as the version of the `ibc-go` bump up.
+- as the versions of different modules in `go.mod` are upgraded, need to ensure that there are no security issues.
+
+## ethermint
+
+### notable changed files
+```
+app/app.go
+app/ante/ante.go
+app/ante/handler_options.go
+app/upgrades.go
+encoding/config.go
+server/start.go
+server/util.go
+rpc/backend/sign_tx.go
+rpc/backend/node_info.go
+rpc/namespaces/ethereum/eth/filters/api.go
+rpc/namespaces/ethereum/eth/filters/filter_system.go
+x/feemarket/types/msg.go
+x/feemarket/keeper/keeper.go
+x/feemarket/keeper/msg_server.go
+x/feemarket/autocli.go
+x/feemarket/module.go
+x/evm/types/msg.go
+x/evm/keeper/keeper.go
+x/evm/keeper/msg_server.go
+x/evm/autocli.go
+x/evm/module.go
+go.mod
+```
+
+### app
+- app.go
+	- align the overall code with the structure of the cosmos-sdk's [app.go](https://github.com/cosmos/cosmos-sdk/blob/v0.50.6/simapp/app.go), except for some parts related canto's modules and issue(ref. https://github.com/Canto-Network/Canto/issues/122)
+- ante
+	-  name change and few other structural changes related to authz.
+- upgrades.go
+	- add migration code due to upgrade of cosmos-sdk and ibc-go
+
+### rpc
+- as go-ethereum versions go up, the implementation of funcs used internally may have changed
+
+### modules
+- cli
+	- remove legacy REST(ref. https://github.com/cosmos/cosmos-sdk/pull/9594)
+	- introduce `autocli`, so removes contents of tx.go, query.go
+- msgs
+	- move `ValidateBasic` logic to msg_server
+	- remove funcs like Route, Type, GetSignBytes, GetSigners because they are supported by `protobuf`. But in case of `MsgEthereumTx`, GetSigners func is alive and implemented GetSignersFromMsgEthereumTxV2 func additionally.(ref. https://github.com/b-harvest/Canto/pull/53#discussion_r1574149712)
+	- changed so that all proposals(like MsgUpdateParams, ...) are done via proposal in the gov module.
+	- the module-specific proposal handler and param change was switched to `msg level` so `authority` has been added to the required module.(ref. https://github.com/cosmos/cosmos-sdk/issues/10952)
+- keeper
+	- KVStore has been changed to use `KVStoreService` as opposed to the prev way of accessing KVStore via store key.(ref. https://github.com/cosmos/cosmos-sdk/pull/16324, ...)
+
+## NOTE
+- as the versions of different modules in `go.mod` are upgraded, need to ensure that there are no security issues.
+
 
 ## Links
 
