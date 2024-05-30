@@ -1,10 +1,10 @@
 # Canto audit details
-- Total Prize Pool: $100,000 in USDC
-  - HM awards: $79,700 in USDC
-  - QA awards: $3,300 in USDC 
-  - Judge awards: $10,000 in USDC
-  - Validator awards: $6,500 in USDC
-  - Scout awards: $500 in USDC
+- Total Prize Pool: $100,000
+  - HM awards: $79,700
+  - QA awards: $3,300
+  - Judge awards: $10,000
+  - Validator awards: $6,500
+  - Scout awards: $500
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2024-05-canto/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
@@ -13,13 +13,6 @@
 
 ❗️Awarding Note for Wardens, Judges, and Lookouts: If you want to claim your awards in $ worth of CANTO, you must follow the steps outlined in the audit channel before the audit ends; otherwise you'll be paid out in USDC.
 
-## Automated Findings / Publicly Known Issues
-
-The 4naly3er report can be found [here](https://github.com/code-423n4/2024-05-canto/blob/main/4naly3er-report.md).
-
-
-
-_Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
 # Overview
 ### Introduction to Canto Blockchain
