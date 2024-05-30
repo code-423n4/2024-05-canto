@@ -22,14 +22,39 @@ The 4naly3er report can be found [here](https://github.com/code-423n4/2024-05-ca
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
 # Overview
+### Introduction to Canto Blockchain
+Canto Blockchain is a high-performance platform designed for decentralized finance (DeFi) applications. Its primary goal is to enhance the safety and efficiency of financial services through decentralization, providing greater transparency and accessibility. Canto supports features such as automated market makers (AMM), lending and borrowing platforms, and smart contracts. The platform continually evolves with active participation from its user and developer community.
 
-## Key dependency changes:
-- Cosmos-SDK v0.45.9 to v0.50.6
-- CometBFT (Tendermint) v0.34.25 to v0.38.6
-- ibc-go v3.2.0 to v8.2.1
-- go-ethereum v1.10.19 to v1.10.26
+### Canto's Tech Stack
+Canto's technical foundation consists of the following key components:
 
-## Canto
+- [**Cosmos SDK**](https://docs.cosmos.network/): This is a modular blockchain framework that allows developers to easily build custom blockchains. Cosmos SDK includes various modules to expand blockchain functionalities and supports the Inter-Blockchain Communication (IBC) protocol for interoperability with other blockchains.
+
+- [**Ethermint**](https://docs.ethermint.zone/): Ethermint enables Ethereum-compatible blockchains to run on top of Cosmos SDK and CometBFT. It fully supports the Ethereum Virtual Machine (EVM), allowing smart contracts from Ethereum to be executed on the Canto blockchain.
+
+- [**CometBFT**](https://docs.cometbft.com/v0.38/) (Tendermint): This is a Byzantine Fault Tolerant (BFT) consensus engine known for its high security and throughput. CometBFT provides fast transaction finality and supports extensive interoperability among different blockchains.
+
+### Purpose of the Code Audit
+The audit will focus on the upgrade of the Canto and Ethermint blockchain applications from Cosmos SDK v0.45.x to v0.50.x, as well as the associated updates in ibc-go v8 and CometBFT v0.38.x. The primary goal is to identify any issues where previously functioning features may no longer work, malfunction, or introduce new vulnerabilities due to SDK bumps, interface changes, incorrect migration settings, or dependencies on the new versions of Cosmos SDK, ibc-go, and CometBFT. The Ethermint module within Canto, which provides EVM compatibility, has also been updated to reflect changes in the dependencies.
+
+#### Key dependency changes:
+
+- Cosmos SDK [v0.45.9](https://github.com/cosmos/cosmos-sdk/tree/v0.45.9) to [v0.50.6](https://github.com/cosmos/cosmos-sdk/tree/v0.50.6)
+- CometBFT (Tendermint) [v0.34.25](https://github.com/tendermint/tendermint/tree/v0.34.24) to [v0.38.6](https://github.com/cometbft/cometbft/tree/v0.38.6)
+- ibc-go [v3.2.0](https://github.com/cosmos/ibc-go/tree/v3.2.0) to [v8.2.1](https://github.com/cosmos/ibc-go/tree/v8.2.1)
+- go-ethereum [v1.10.19](https://github.com/ethereum/go-ethereum/tree/v1.10.19) to [v1.10.26](https://github.com/ethereum/go-ethereum/tree/v1.10.26)
+- The audit aims to ensure a smooth transition to the updated versions, maintaining the reliability and security of the Canto blockchain platform.
+
+### Audit Repository
+The code audit for Canto includes the review of key components that have undergone significant updates. The repository for this audit is structured as follows:
+```
+2024-05-canto
+├── canto_main
+└── ethermint_main
+```
+- **canto_main**: This directory contains the Canto Appchain, which is built on Cosmos SDK. The Canto Appchain forms the core blockchain infrastructure supporting various financial applications. It utilizes a modular architecture and supports IBC to enhance scalability and interoperability.
+- **ethermint_main**: This directory contains the Ethermint blockchain, which provides Ethereum compatibility. Ethermint enables the use of Ethereum's smart contracts and tools on the Canto blockchain and has been updated to reflect changes in its dependencies to remain compatible with the latest versions of the underlying technologies.
+
 
 ### notable changed files
 ```
