@@ -274,8 +274,10 @@ export PATH=$PATH:$HOME/go/bin
 
 ```bash
 git clone https://github.com/code-423n4/2024-05-canto
-# for Canto-main
 cd 2024-05-canto
+
+# for Canto-main
+cd canto-main
 make install
 ./init.sh
 
