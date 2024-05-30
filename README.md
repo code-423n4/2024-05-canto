@@ -29,7 +29,9 @@ Canto's technical foundation consists of the following key components:
 
 ### Purpose of the Code Audit
 The audit will focus on the upgrade of the Canto and Ethermint blockchain applications from Cosmos SDK v0.45.x to v0.50.x, as well as the associated updates in ibc-go v8 and CometBFT v0.38.x.
-The primary goal is to identify any issues where previously functioning features may no longer work, malfunction, or introduce new vulnerabilities due to SDK bumps, interface changes, incorrect migration settings, or dependencies on the new versions of Cosmos SDK, ibc-go, and CometBFT. 
+
+The primary goal is to identify any issues where previously functioning features may no longer work, malfunction, or introduce new vulnerabilities due to SDK bumps, interface changes, incorrect migration settings, or dependencies on the new versions of Cosmos SDK, ibc-go, and CometBFT.
+
 The Ethermint module within Canto, which provides EVM compatibility, has also been updated to reflect changes in the dependencies.
 
 #### Key dependency changes:
