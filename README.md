@@ -72,8 +72,6 @@ The code audit for Canto includes the review of key components that have undergo
 
 ---
 
-# Scope
-
 ## Scoping Q &amp; A
 
 ### General questions
