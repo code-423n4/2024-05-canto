@@ -200,6 +200,7 @@ The current parameters and state of Canto v7 can be reviewed on [Polkachu](https
 | go.mod | 260 |
 | Total  |   5388 |
 
+## Overview of Changes
 
 ### app
 
@@ -256,6 +257,8 @@ The current parameters and state of Canto v7 can be reviewed on [Polkachu](https
 | x/evm/module.go | 193 | 48.6% |
 | go.mod | 256 ||
 | Total  | 5957   ||
+
+## Overview of Changes
 
 ### app
 
