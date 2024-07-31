@@ -1,0 +1,268 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q2-2024 / canto-may30
+==============================================================
+
+[05/29/2024 19:04] kartoonjoy (pinned)
+👋 Hello and welcome to the audit channel for the **$100,000 Canto** audit!
+
+📆 Audit opens 05/30/2024 20:00 (20:00 UTC) and runs through 06/20/2024 20:00 (20:00 UTC) (21 days).
+
+Please give a warm welcome to the Canto team, particularly @kt_nowk, @fates, and @dudong2, who will be available for questions either here in the channel or via a PRIVATE thread in the EST, KST timezone(s). 
+
+🤖 **Documentation bot assistance:** For general questions about the codebase, give our documentation bot a try, by tagging `@Documentation Wolf` in any thread (private or public) and asking your question. The bot will make its best attempt to answer based on the codebase and documentation, and link you to relevant resources.  
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://code4rena.com/audits/2024-05-canto
+
+{Embed}
+https://code4rena.com/audits/2024-05-canto
+Canto | Code4rena
+$100,000
+30 May 8:00 PM—20 June 8:00 PM
+Code4rena - ARCHIVE-Q2-2024 - canto-may30 [1245076638652305471].txt_Files/c4-og-v2-0F6D6.png
+
+
+[05/29/2024 19:04] kartoonjoy
+Pinned a message.
+
+
+[05/29/2024 22:09] kartoonjoy (pinned)
+For this audit, you have the option to be paid out in USDC or CANTO. If you want to claim your awards in $ worth of CANTO, please follow the steps in the thread prior to the audit close: 06/20/2024 20:00. If you do not follow the steps in the thread, any earned rewards will be paid out in USDC.
+
+Details in thread 👉
+
+
+[05/29/2024 22:11] kartoonjoy
+Started a thread.
+
+
+[05/29/2024 22:12] kartoonjoy
+Pinned a message.
+
+
+[06/08/2024 19:47] sabit97
+@kt_nowk , @fates , @dudong2 welcome.
+
+
+[06/12/2024 05:12] iwildsniperi
+so this is pure `go` audit?
+
+{Reactions}
+✅ 
+
+[06/12/2024 05:21] _3doc_
+Pure go = pure fun 💜
+
+{Reactions}
+🥲 
+
+[06/12/2024 05:21] saifgaber
+Yes
+
+
+[06/12/2024 05:22] iwildsniperi
+good luck guys🫡
+
+
+[06/15/2024 10:17] honeymewn
+hi everyone
+2 questions to c4 and organizers
+1. Did you exclude module logic code on purpose from the scope? say there's a bug in csr/keeper/csr.go or some other file related to the module NOT in scope -- will it still be accepted as a valid issue?
+2. Given how large the scope is I suggest we give wardens some extra time by extending the competition by 3 days, i.e set the new deadline to 24 Jun 12:00 AM GMT+4.
+
+What do you think?
+
+{Reactions}
+👀 
+
+[06/17/2024 14:35] fates2341
+As described in [README.md](https://github.com/code-423n4/2024-05-canto) KVStore has been changed to use `KVStoreService` as opposed to the prev way of accessing KVStore via store key.(ref. [refactor(x/staking)!: KVStoreService, return errors and use context.Context cosmos/cosmos-sdk#16324](https://github.com/cosmos/cosmos-sdk/pull/16324), ...)
+
+In the case of csr.go, it was excluded to reduce the vast code review scope because only the way to use the store has changed and there is no change in the actual logic. If there is a bug in the part using the newly introduced KVStoreService, this can also be seen as a valid issue.
+
+
+[06/17/2024 15:07] dontonka
+@CloudEllie `FYI` be aware that the section `Overview of Changes` appears twice in the contest page, that's not important per say, just a minor FYI.
+
+
+[06/17/2024 15:13] itsmetechjay
+thanks for the flag - we'll take a look!  cc: @kartoonjoy | C4🎇🎇 @KnownFact
+
+
+[06/17/2024 15:13] kartoonjoy
+Thank you. Its actually because its listed twice in the repo
+
+{Reactions}
+👍 
+
+[06/17/2024 21:12] saifgaber
+Hey, Is it possible to extend the competition as @honeymewn  suggested?
+
+
+[06/17/2024 21:37] kartoonjoy
+It's a very low likelihood that this audit would be extended. Please just do your best to identify meaningful findings.
+
+{Reactions}
+👍 
+
+[06/20/2024 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺Wardens The **$100,000 Canto** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Feel free to ping a Civics-Admin if you have questions along the way!
+
+{Reactions}
+🫡 (2) 
+
+[06/28/2024 12:43] honeymewn
+hi. i'm fairly new to code4rena. how do i know the status of my submissions? thanks
+
+
+[06/28/2024 18:25] dontonka
+you can't as you don't have SR (aka Backstage role) so you don't have access to the repo. you will just have a nice or very odd surprise when the results come in in few weeks.
+
+
+[06/28/2024 18:31] dontonka
+@honeygem I just checked your reports, which are rather very small 😅 . Out of the 4, only one did make it to the finding repo only (the GovShuttle related) and has been downgraded to QA.
+
+{Reactions}
+😢 
+
+[07/03/2024 08:14] 0x1771_
+hey guys, any news on the current status of the audit?
+
+
+[07/03/2024 08:54] varun2791
+It's in PJQA
+
+
+[07/03/2024 09:31] 0x1771_
+thanks
+
+
+[07/05/2024 11:14] honeymewn
+Hi. I'm new to code4rena and while I'm impressed by judging speed I have a question -- Why are issues closed here without any comments? I find it quite disrespectful to wardens and it hasn't happened on other platforms I've participated. Now, I'm sitting wondering whether they even read the reports.
+@kartoonjoy | C4🎇🎇
+
+
+[07/05/2024 11:14] honeymewn
+@kt_nowk  , @fates  , @dudong2
+
+
+[07/05/2024 11:20] _3doc_
+That seems strange, I usually comment issues before closing so people can review the decision. Exception to that are the issues that become duplicate. Which issue(s) are you referring to?
+
+
+[07/05/2024 11:21] honeymewn
+I'll dm you. I would have no way of knowing it if a friend didn't send me screenshots.
+
+
+[07/05/2024 11:22] _3doc_
+Ok. There’s also the case of findings that didn’t pass validation. I can provide explanations in DM but please know that the time for escalations is over so all we can do is informing
+
+
+[07/05/2024 11:23] honeymewn
+@3DOC appreciate it but this one wasn't announced here either which I find ridiculous
+
+
+[07/05/2024 11:24] _3doc_
+In C4 not everyone can escalate, you need the SR role and once you have that you are invited to the channel where these are announced
+
+
+[07/05/2024 11:25] honeymewn
+I could have escalated through a friend if I knew beforehand.
+
+{Reactions}
+empathy 
+
+[07/10/2024 19:06] thebrittfactor
+🤑 🎉  Awards for **Canto**:
+
+$65,039.03 USDC » @0x1771 
+$7,330.48 USDC » @SergeantPepper 
+$7,330.48 USDC » @zhaojie 
+$1,563.16 USDC » Dup1337 (@sorryNotsorry and @deliriusz) 
+$1,042.11 USDC » @forgebyola 
+$694.74 USDC » @0xladboy | Sparkware 
+
+Huge appreciation to @3DOC, who judged this audit AND contributed 3 Medium-risk findings (2 of them solo), forfeiting their awards to avoid conflict of interest. 🔥 :hi5:
+
+🏁 Findings summary
+--------------------------------------
+4 Med risk findings
+21 wardens contributed
+
+Top Hunter: 0x1771
+Top Gatherer: 0x1771
+Top QA report: Dup1337
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🫡 (6) 🎉 (4) 🔥 (5) 
+
+[07/10/2024 19:25] 0xsorrynotsorry
+You're a true legend @3DOC 🙇‍♂️
+Never saw something like this before
+
+{Reactions}
+👏 (24) 💜 (12) 🫡 (5) 
+
+[07/10/2024 19:33] 0xjuancito
+I didn't notice it at first. True legend 🫡
+
+{Reactions}
+💯 (9) 
+
+[07/10/2024 20:19] ladboy233
+yeah I am a truly newbie of cosmos / golang and I read @3DOC 's finding and learnt a lot. awesome finding and judging.
+
+{Reactions}
+💜 (7) 
+
+[07/10/2024 20:19] ladboy233
+🫡
+
+
+[07/11/2024 07:32] olanre_waju
+@3DOC 🫡
+
+{Reactions}
+thisistheway (7) 
+
+[07/11/2024 07:35] bigsam0831
+@3DOC  respect 💯
+
+
+[07/11/2024 09:02] demorextess
+I wish I have SR role, I really wonder it. Nice job @3DOC 👏
+
+
+[07/11/2024 10:03] 0x1771_
+ty @3DOC
+
+
+[07/11/2024 10:52] _3doc_
+Thanks everyone for the kind words, and big congrats to you @0x1771 :hi5:
+
+{Reactions}
+❤️ (10) 
+
+[07/19/2024 02:42] itsmetechjay
+ℹ️ This channel is pending archive.   As a result, any private threads will be permanently deleted on Friday, 26 July 2024.  Please make sure to grab anything you might need before then.
+
+
+[07/29/2024 16:09] itsmetechjay
+ℹ️ Reminder: this channel will be deleted after 24 hours.
+
+{Reactions}
+👋 
+
+==============================================================
+Exported 44 message(s)
+==============================================================
